@@ -14,12 +14,11 @@
         <ion-reorder-button class="ion-navicon"></ion-reorder-button>
       </ion-item>
     </ion-list>
-    <hr/>
     <ui-view>
-      <div ng-if="bookmarksListCtrl.getCurrentCategory()">
-        <button type="button" class="btn btn-link"
+      <div class="padding" ng-if="bookmarksListCtrl.getCurrentCategory()">
+        <button type="button" class="button button-balanced button-block"
                 ui-sref="eggly.categories.bookmarks.create">
-          <span class="glyphicon glyphicon-plus"></span>
+                <span class="icon ion-compose"></span>
           Create Bookmark
         </button>
       </div>
