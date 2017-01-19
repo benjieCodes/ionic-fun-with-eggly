@@ -28,7 +28,9 @@ angular.module('categories.bookmarks', [
             .then(function (bookmarks) {
                 bookmarksListCtrl.bookmarks = bookmarks;
             });
-
+        bookmarksListCtrl.goToUrl = function getToUrl(bookmark) {
+            window.open(bookmark.url, '_system');
+        }
         bookmarksListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
         bookmarksListCtrl.getCurrentCategoryName = CategoriesModel.getCurrentCategoryName;
         bookmarksListCtrl.deleteBookmark = BookmarksModel.deleteBookmark;
