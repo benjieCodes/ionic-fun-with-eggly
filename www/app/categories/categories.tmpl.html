@@ -1,8 +1,15 @@
-<a ui-sref="eggly.categories"><img class="logo" src="assets/img/eggly-logo.png"></a>
-<ul class="nav nav-sidebar">
-    <li ng-repeat="category in categoriesListCtrl.categories" ng-class="{'active':isCurrentCategory(category)}">
-        <a ui-sref="eggly.categories.bookmarks({category:category.name})">
-            {{category.name}}
+<ion-view>
+    <ion-content>
+        <a menu-close class="logo" ui-sref="eggly.categories">
+            <img src="assets/img/eggly-logo.png">
         </a>
-    </li>
-</ul>
+        <ion-list>
+            <ion-item href="" ng-repeat="category in categoriesListCtrl.categories"
+                      menu-close
+                      ui-sref="eggly.categories.bookmarks({category:category.name})"
+                      ui-sref-active="active">
+                    {{category.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
