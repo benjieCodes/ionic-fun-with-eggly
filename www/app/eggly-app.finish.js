@@ -51,7 +51,7 @@ angular.module('Eggly', [
             cancelEditing();
         }
 
-        $scope.isCurrentCategory = isCurrentCategory;
+        $scope.isCurrentCategory = isCurrentCatego ry;
         $scope.setCurrentCategory = setCurrentCategory;
 
         function setEditedBookmark(bookmark) {
