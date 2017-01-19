@@ -3,10 +3,10 @@
     <button menu-toggle="left" class="button button-icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="secondary">
-    <button class="button button-icon ion-edit"></button>
+    <button ng-click="bookmarksListCtrl.toggleEditMode()" class="button button-icon ion-edit"></button>
   </ion-nav-buttons>
   <ion-content>
-    <ion-list show-delete="true" show-reorder="true">
+    <ion-list show-delete="bookmarksListCtrl.isEditMode" show-reorder="true">
       <ion-item href="" ng-repeat="bookmark in bookmarksListCtrl.bookmarks | filter:{category:bookmarksListCtrl.getCurrentCategoryName()}"
                 ng-click="bookmarksListCtrl.goToUrl(bookmark)">
         {{bookmark.title}}

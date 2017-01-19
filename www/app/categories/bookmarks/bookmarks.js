@@ -19,9 +19,10 @@ angular.module('categories.bookmarks', [
             })
         ;
     })
-    .controller('BookmarksListCtrl', function ($stateParams, CategoriesModel, BookmarksModel) {
+    .controller('BookmarksListCtrl', function ($state, $stateParams, CategoriesModel, BookmarksModel) {
         var bookmarksListCtrl = this;
 
+        bookmarksListCtrl.isEditMode = false;
         bookmarksListCtrl.title = $stateParams.category || 'Bookmarks'
         CategoriesModel.setCurrentCategory($stateParams.category);
 
@@ -29,8 +30,14 @@ angular.module('categories.bookmarks', [
             .then(function (bookmarks) {
                 bookmarksListCtrl.bookmarks = bookmarks;
             });
+
+        bookmarksListCtrl.toggleEditMode = function toggleEditMode() {
+          bookmarksListCtrl.isEditMode = !bookmarksListCtrl.isEditMode;
+        }
         bookmarksListCtrl.goToUrl = function getToUrl(bookmark) {
-            window.open(bookmark.url, '_system');
+          bookmarksListCtrl.isEditMode
+            ? $state.go('eggly.categories.bookmarks.edit', {bookmarkId: bookmark.id, category: bookmark.category})
+            : window.open(bookmark.url, '_system');
         }
         bookmarksListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
         bookmarksListCtrl.getCurrentCategoryName = CategoriesModel.getCurrentCategoryName;

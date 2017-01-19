@@ -7,6 +7,10 @@ body {
     color: #4F534E;
 }
 
+body:not(.menu-open) .disable-pointer-events {
+    pointer-events: all;
+}
+
 a {
     color: #373A36;
     text-decoration: none;
