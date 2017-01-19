@@ -11,7 +11,7 @@
                 ng-click="bookmarksListCtrl.goToUrl(bookmark)">
         {{bookmark.title}}
         <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-        <ion-reorder-button class="ion-navicon"></ion-reorder-button>
+        <ion-reorder-button on-reorder="bookmarksListCtrl.moveBookmark(bookmark, $fromIndex, $toIndex)" class="ion-navicon"></ion-reorder-button>
       </ion-item>
     </ion-list>
     <ui-view>

@@ -28,16 +28,25 @@ angular.module('categories.bookmarks', [
 
         BookmarksModel.getBookmarks()
             .then(function (bookmarks) {
-                bookmarksListCtrl.bookmarks = bookmarks;
+                var category = CategoriesModel.getCurrentCategoryName();
+
+                bookmarksListCtrl.bookmarks =
+                  category ? _.where(bookmarks, {category: category}) : bookmarks;
             });
 
         bookmarksListCtrl.toggleEditMode = function toggleEditMode() {
           bookmarksListCtrl.isEditMode = !bookmarksListCtrl.isEditMode;
         }
+
         bookmarksListCtrl.goToUrl = function getToUrl(bookmark) {
           bookmarksListCtrl.isEditMode
             ? $state.go('eggly.categories.bookmarks.edit', {bookmarkId: bookmark.id, category: bookmark.category})
             : window.open(bookmark.url, '_system');
+        }
+
+        bookmarksListCtrl.moveBookmark = function moveBookmark(bookmark, fromIndex, toIndex) {
+          bookmarksListCtrl.bookmarks.splice(fromIndex, 1);
+          bookmarksListCtrl.bookmarks.splice(toIndex, 0, bookmark);
         }
         bookmarksListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
         bookmarksListCtrl.getCurrentCategoryName = CategoriesModel.getCurrentCategoryName;
