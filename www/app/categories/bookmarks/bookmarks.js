@@ -25,14 +25,7 @@ angular.module('categories.bookmarks', [
         bookmarksListCtrl.isEditMode = false;
         bookmarksListCtrl.title = $stateParams.category || 'Bookmarks'
         CategoriesModel.setCurrentCategory($stateParams.category);
-
-        BookmarksModel.getBookmarks()
-            .then(function (bookmarks) {
-                var category = CategoriesModel.getCurrentCategoryName();
-
-                bookmarksListCtrl.bookmarks =
-                  category ? _.where(bookmarks, {category: category}) : bookmarks;
-            });
+        getBookmarks();
 
         bookmarksListCtrl.toggleEditMode = function toggleEditMode() {
           bookmarksListCtrl.isEditMode = !bookmarksListCtrl.isEditMode;
@@ -48,6 +41,22 @@ angular.module('categories.bookmarks', [
           bookmarksListCtrl.bookmarks.splice(fromIndex, 1);
           bookmarksListCtrl.bookmarks.splice(toIndex, 0, bookmark);
         }
+
+        bookmarksListCtrl.deleteBookmark = function deleteBookmark(bookmark) {
+          BookmarksModel.deleteBookmark(bookmark)
+
+          getBookmarks();
+        }
+        function getBookmarks() {
+          BookmarksModel.getBookmarks()
+            .then(function (bookmarks) {
+              var category = CategoriesModel.getCurrentCategoryName();
+
+              bookmarksListCtrl.bookmarks =
+                category ? _.where(bookmarks, {category: category}) : bookmarks;
+            });
+        }
+
         bookmarksListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
         bookmarksListCtrl.getCurrentCategoryName = CategoriesModel.getCurrentCategoryName;
         bookmarksListCtrl.deleteBookmark = BookmarksModel.deleteBookmark;

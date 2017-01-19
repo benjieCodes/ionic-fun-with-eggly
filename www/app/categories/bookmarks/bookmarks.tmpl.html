@@ -10,7 +10,7 @@
       <ion-item href="" ng-repeat="bookmark in bookmarksListCtrl.bookmarks | filter:{category:bookmarksListCtrl.getCurrentCategoryName()}"
                 ng-click="bookmarksListCtrl.goToUrl(bookmark)">
         {{bookmark.title}}
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+        <ion-delete-button ng-click="bookmarksListCtrl.deleteBookmark(bookmark)" class="ion-minus-circled"></ion-delete-button>
         <ion-reorder-button on-reorder="bookmarksListCtrl.moveBookmark(bookmark, $fromIndex, $toIndex)" class="ion-navicon"></ion-reorder-button>
       </ion-item>
     </ion-list>
