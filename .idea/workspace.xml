@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10eab00c-b833-4a2c-8f3a-cd89a488ea62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/categories/bookmarks/bookmarks.js" afterPath="$PROJECT_DIR$/www/app/categories/bookmarks/bookmarks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/categories/bookmarks/bookmarks.tmpl.html" afterPath="$PROJECT_DIR$/www/app/categories/bookmarks/bookmarks.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/assets/css/eggly.css" afterPath="$PROJECT_DIR$/www/assets/css/eggly.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,8 +83,8 @@
       <file leaf-file-name="eggly.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/assets/css/eggly.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+            <state relative-caret-position="828">
+              <caret line="72" column="1" lean-forward="false" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -412,12 +410,12 @@
       <updated>1484758201108</updated>
       <workItem from="1484758202826" duration="2396000" />
       <workItem from="1484843359474" duration="611000" />
-      <workItem from="1484844059643" duration="1866000" />
+      <workItem from="1484844059643" duration="2053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4873000" />
+    <option name="totallyTimeSpent" value="5060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2834" y="-115" width="1253" height="999" extended-state="0" />
@@ -633,8 +631,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/assets/css/eggly.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        <state relative-caret-position="828">
+          <caret line="72" column="1" lean-forward="false" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
           <folding />
         </state>
       </provider>
