@@ -7,7 +7,7 @@
   </ion-nav-buttons>
   <ion-content>
     <ion-list show-delete="bookmarksListCtrl.isEditMode" show-reorder="true">
-      <ion-item href="" ng-repeat="bookmark in bookmarksListCtrl.bookmarks | filter:{category:bookmarksListCtrl.getCurrentCategoryName()}"
+      <ion-item href="" ng-repeat="bookmark in bookmarksListCtrl.bookmarks"
                 ng-click="bookmarksListCtrl.goToUrl(bookmark)">
         {{bookmark.title}}
         <ion-delete-button ng-click="bookmarksListCtrl.deleteBookmark(bookmark)" class="ion-minus-circled"></ion-delete-button>
